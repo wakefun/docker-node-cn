@@ -1,4 +1,4 @@
-FROM node:16-slim
+FROM node:12-slim
 USER node
 RUN mkdir -p /home/node/node-cn
 WORKDIR /home/node/node-cn
