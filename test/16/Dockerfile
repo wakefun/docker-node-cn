@@ -1,4 +1,5 @@
 FROM node-cn:16 as frontend
+USER node
 WORKDIR /home/node/node-cn
 COPY . .
 RUN npm ci \
