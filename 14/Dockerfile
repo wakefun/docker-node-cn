@@ -1,4 +1,4 @@
-FROM node:16-slim
+FROM node:14-slim
 LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 USER node
@@ -13,4 +13,4 @@ RUN npm config set registry=https://registry.npmmirror.com/ \
     && npm version >> .node-cn-info \
     && yarn versions >> .node-cn-info 
 
-ONBUILD RUN cat /home/node/node-cn/.node-cn-info    
+ONBUILD RUN cat /home/node/node-cn/.node-cn-info
