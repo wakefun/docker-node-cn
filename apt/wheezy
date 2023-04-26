@@ -1,4 +1,0 @@
-deb http://mirrors.aliyun.com/debian-archive/debian/ wheezy main non-free contrib
-deb http://mirrors.aliyun.com/debian-archive/debian/ wheezy-proposed-updates main non-free contrib
-deb-src http://mirrors.aliyun.com/debian-archive/debian/ wheezy main non-free contrib
-deb-src http://mirrors.aliyun.com/debian-archive/debian/ wheezy-proposed-updates main non-free contrib
