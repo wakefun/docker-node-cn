@@ -1,4 +1,4 @@
-FROM node:16-slim
+FROM node:20-slim
 LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 
