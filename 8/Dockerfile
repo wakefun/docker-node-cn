@@ -10,11 +10,9 @@ RUN mkdir -p /home/node/node-cn
 WORKDIR /home/node/node-cn
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin 
-RUN npm i -g mirror-config-china --registry=https://registry.npmmirror.com \
-    && cd $HOME \
-    && mirror-config-china --registry=https://registry.npmmirror.com --bin-mirrors-prefix=https://npmmirror.com/mirrors \
+RUN npm config set registry https://registry.npmmirror.com \
     && cd /home/node/node-cn \
-    && yarn config set registry=https://registry.npmmirror.com/ \
+    && yarn config set registry=https://registry.npmmirror.com \
     && npm version >> .node-cn-info \
     && yarn versions >> .node-cn-info 
 
