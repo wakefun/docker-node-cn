@@ -3,7 +3,7 @@ LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 
 USER root
-COPY --chown=root:root apt/bullseye /etc/apt/sources.list
+COPY --chown=root:root apt/bookworm /etc/apt/sources.list
 
 USER node
 RUN mkdir -p /home/node/node-cn
