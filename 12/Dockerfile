@@ -3,6 +3,8 @@ LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 
 USER root
+COPY --chown=root:root apt/bullseye.http /etc/apt/sources.list
+RUN apt-get update && apt-get install apt-transport-https ca-certificates
 COPY --chown=root:root apt/bullseye /etc/apt/sources.list
 
 USER node
