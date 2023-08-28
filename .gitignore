@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# make打包定义变量，避免错误上传私有源地址到公有仓库
+make.conf
