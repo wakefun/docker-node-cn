@@ -1,9 +1,9 @@
-FROM node:16-slim
+FROM node:16-bookworm-slim
 LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 
 USER root
-COPY --chown=root:root apt/buster /etc/apt/sources.list
+COPY --chown=root:root apt/bookworm /etc/apt/sources.list
 
 USER node
 RUN mkdir -p /home/node/node-cn
