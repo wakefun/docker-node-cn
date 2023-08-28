@@ -1,5 +1,8 @@
 ### make REGISTRY=你的registry ###
 
+# 包含make.conf文件，定义docker registry
+-include make.conf
+
 # 镜像名称
 IMAGE_NAME = node-cn
 # 私有源地址
