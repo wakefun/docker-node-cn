@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-
 
 USER root
 COPY --chown=root:root apt/bookworm.http /etc/apt/sources.list
-RUN apt-get update && apt-get install apt-transport-https ca-certificates
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 COPY --chown=root:root apt/bookworm /etc/apt/sources.list
 
 USER node
