@@ -1,5 +1,5 @@
 # node-cn
-
+## GitHub Action :[![Upload node-cn to docker.io](https://github.com/wakefun/docker-node-cn/actions/workflows/makefile.yml/badge.svg?branch=main&event=push)](https://github.com/wakefun/docker-node-cn/actions/workflows/makefile.yml)
 ## 全局依赖
 > [BestPractices install global-npm-dependencies](https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#global-npm-dependencies)  
 
