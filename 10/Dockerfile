@@ -4,7 +4,10 @@ LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-
 
 USER root
 COPY --chown=root:root apt/buster.http /etc/apt/sources.list
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
+RUN apt-get update \
+    && apt-get install -y apt-transport-https ca-certificates gnupg \
+    # 添加软件密钥，因为该版本的node官方已经drop了，后续没有基于新的debian底包更新，所以会有key缺失的情况导致apt-get update失败
+    && apt-key adv --recv-keys 0E98404D386FA1D9 6ED0E7B82643E131
 COPY --chown=root:root apt/buster /etc/apt/sources.list
 
 USER node
