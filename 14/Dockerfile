@@ -14,7 +14,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin 
 RUN npm config set registry https://registry.npmmirror.com \
     && yarn config set registry=https://registry.npmmirror.com \
-    && npm i -g pnpm \
+    && npm i -g pnpm@7 \
     && npm version >> .node-cn-info \
     && yarn versions >> .node-cn-info 
 
