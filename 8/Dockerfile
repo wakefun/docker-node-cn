@@ -12,14 +12,13 @@ RUN apt-get update \
     # 添加软件密钥，因为该版本的node官方已经drop了，后续没有基于新的debian底包更新，所以会有key缺失的情况导致apt-get update失败
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 6ED0E7B82643E131
 COPY --chown=root:root apt/buster /etc/apt/sources.list
-COPY --chown=node:node .npmrc /home/node/.npmrc
-RUN mkdir -p /home/node/.npm-global/etc \
-    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc'
 
 USER node
 RUN mkdir -p /home/node/node-cn
 WORKDIR /home/node/node-cn
-
-RUN npm version >> .node-cn-info
+COPY --chown=node:node .npmrc /home/node/.npmrc
+RUN mkdir -p /home/node/.npm-global/etc \
+    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc \
+    && npm version >> .node-cn-info
 
 ONBUILD RUN cat /home/node/node-cn/.node-cn-info    
