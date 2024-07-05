@@ -9,14 +9,14 @@ USER root
 COPY --chown=root:root apt/bullseye.http /etc/apt/sources.list
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 COPY --chown=root:root apt/bullseye /etc/apt/sources.list
-COPY --chown=node:node .npmrc /home/node/.npmrc
-RUN mkdir -p /home/node/.npm-global/etc \
-    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc'
 
 USER node
 RUN mkdir -p /home/node/node-cn
 WORKDIR /home/node/node-cn
-RUN npm i -g pnpm@6 \
+COPY --chown=node:node .npmrc /home/node/.npmrc
+RUN mkdir -p /home/node/.npm-global/etc \
+    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc \
+    && npm i -g pnpm@6 \
     && npm version >> .node-cn-info
 
 ONBUILD RUN cat /home/node/node-cn/.node-cn-info    
