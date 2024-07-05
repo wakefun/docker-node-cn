@@ -2,20 +2,21 @@ FROM node:14-bullseye-slim
 LABEL org.opencontainers.image.authors="wakefun"
 LABEL org.opencontainers.image.documentation="https://github.com/wakefun/docker-node-cn/blob/main/README.MD"
 
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+ENV PATH=$PATH:/home/node/.npm-global/bin 
+
 USER root
 COPY --chown=root:root apt/bullseye.http /etc/apt/sources.list
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 COPY --chown=root:root apt/bullseye /etc/apt/sources.list
+COPY --chown=node:node .npmrc /home/node/.npmrc
+RUN mkdir -p /home/node/.npm-global/etc \
+    && cat /home/node/.npmrc >> {}/etc/npmrc'
 
 USER node
 RUN mkdir -p /home/node/node-cn
 WORKDIR /home/node/node-cn
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=$PATH:/home/node/.npm-global/bin 
-RUN npm config set registry https://registry.npmmirror.com \
-    && yarn config set registry=https://registry.npmmirror.com \
-    && npm i -g pnpm@7 \
-    && npm version >> .node-cn-info \
-    && yarn versions >> .node-cn-info 
+RUN npm i -g pnpm@7 \
+    && npm version >> .node-cn-info
 
 ONBUILD RUN cat /home/node/node-cn/.node-cn-info    
