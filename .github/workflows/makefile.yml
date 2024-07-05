@@ -1,6 +1,7 @@
 name: Upload node-cn to docker.io
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
