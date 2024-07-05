@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 COPY --chown=root:root apt/bookworm /etc/apt/sources.list
 COPY --chown=node:node .npmrc /home/node/.npmrc
 RUN mkdir -p /home/node/.npm-global/etc \
-    && cat /home/node/.npmrc >> {}/etc/npmrc'
+    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc'
 
 USER node
 RUN mkdir -p /home/node/node-cn

@@ -14,7 +14,7 @@ RUN apt-get update \
 COPY --chown=root:root apt/buster /etc/apt/sources.list
 COPY --chown=node:node .npmrc /home/node/.npmrc
 RUN mkdir -p /home/node/.npm-global/etc \
-    && cat /home/node/.npmrc >> {}/etc/npmrc'
+    && cat /home/node/.npmrc >> /home/node/.npm-global/etc/npmrc'
 
 USER node
 RUN mkdir -p /home/node/node-cn
