@@ -1,1 +1,4 @@
-deb http://mirrors.aliyun.com/debian/ bookworm main contrib non-free non-free-firmware
+Types: deb
+URIs: http://mirrors.aliyun.com/debian/
+Suites: bookworm
+Components: main contrib non-free non-free-firmware
