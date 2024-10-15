@@ -6,9 +6,9 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin 
 
 USER root
-COPY --chown=root:root apt/bookworm.http /etc/apt/sources.list
+COPY --chown=root:root apt/bookworm.http /etc/apt/sources.list.d/debian.sources
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
-COPY --chown=root:root apt/bookworm /etc/apt/sources.list
+COPY --chown=root:root apt/bookworm /etc/apt/sources.list.d/debian.sources
 
 USER node
 RUN mkdir -p /home/node/node-cn
