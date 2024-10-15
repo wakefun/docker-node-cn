@@ -1,8 +1,47 @@
-deb https://mirrors.aliyun.com/debian/ bookworm main contrib non-free non-free-firmware
-# deb-src https://mirrors.aliyun.com/debian/ bookworm main contrib non-free non-free-firmware
-deb https://mirrors.aliyun.com/debian/ bookworm-updates main contrib non-free non-free-firmware
-# deb-src https://mirrors.aliyun.com/debian/ bookworm-updates main contrib non-free non-free-firmware
-deb https://mirrors.aliyun.com/debian/ bookworm-backports main contrib non-free non-free-firmware
-# deb-src https://mirrors.aliyun.com/debian/ bookworm-backports main contrib non-free non-free-firmware
-deb https://mirrors.aliyun.com/debian-security/ bookworm-security main contrib non-free non-free-firmware
-# deb-src https://mirrors.aliyun.com/debian-security bookworm-security main contrib non-free non-free-firmware
+# 主仓库
+Types: deb
+URIs: https://mirrors.aliyun.com/debian/
+Suites: bookworm
+Components: main contrib non-free non-free-firmware
+
+# 主仓库（源代码）
+# Types: deb-src
+# URIs: https://mirrors.aliyun.com/debian/
+# Suites: bookworm
+# Components: main contrib non-free non-free-firmware
+
+# 更新仓库
+Types: deb
+URIs: https://mirrors.aliyun.com/debian/
+Suites: bookworm-updates
+Components: main contrib non-free non-free-firmware
+
+# 更新仓库（源代码）
+# Types: deb-src
+# URIs: https://mirrors.aliyun.com/debian/
+# Suites: bookworm-updates
+# Components: main contrib non-free non-free-firmware
+
+# 回退仓库
+Types: deb
+URIs: https://mirrors.aliyun.com/debian/
+Suites: bookworm-backports
+Components: main contrib non-free non-free-firmware
+
+# 回退仓库（源代码）
+# Types: deb-src
+# URIs: https://mirrors.aliyun.com/debian/
+# Suites: bookworm-backports
+# Components: main contrib non-free non-free-firmware
+
+# 安全更新仓库
+Types: deb
+URIs: https://mirrors.aliyun.com/debian-security/
+Suites: bookworm-security
+Components: main contrib non-free non-free-firmware
+
+# 安全更新仓库（源代码）
+# Types: deb-src
+# URIs: https://mirrors.aliyun.com/debian-security/
+# Suites: bookworm-security
+# Components: main contrib non-free non-free-firmware
