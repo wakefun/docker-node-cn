@@ -1,0 +1,4 @@
+Types: deb
+URIs: http://mirrors.aliyun.com/debian/
+Suites: trixie
+Components: main contrib non-free non-free-firmware
